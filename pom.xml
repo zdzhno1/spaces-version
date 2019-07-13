@@ -16,7 +16,7 @@
 
     <!--配置版本控制系统地址-->
     <scm>
-        <connection>scm:git:git://git@github.com:zdzhno1/spaces-version.git</connection>
+        <connection>scm:git:ssh://git@github.com:zdzhno1/spaces-version.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:zdzhno1/spaces-version.git</developerConnection>
         <url>https://github.com/zdzhno1/spaces-version</url>
       <tag>zdzh-1.0-SNAPSHOT</tag>
@@ -182,6 +182,7 @@
                 <configuration>
                     <tagNameFormat>zdzh-${project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+
                     <!--<autoVersionSubmodules>true</autoVersionSubmodules>
                     <mavenExecutorId>forked-path</mavenExecutorId>
                     <useReleaseProfile>false</useReleaseProfile>
