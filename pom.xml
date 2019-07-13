@@ -16,10 +16,11 @@
     </properties>
 
 
+    <!--配置版本控制系统地址-->
     <scm>
-        <connection></connection>
-        <developerConnection></developerConnection>
-        <url></url>
+        <connection>scm:git:git://git@github.com:zdzhno1/spaces-version.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:zdzhno1/spaces-version.git</developerConnection>
+        <url>https://github.com/zdzhno1/spaces-version</url>
     </scm>
 
 
@@ -173,6 +174,19 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <!--配置release插件：1.自动版本发布 2.自动创建分支-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <!--<autoVersionSubmodules>true</autoVersionSubmodules>
+                    <mavenExecutorId>forked-path</mavenExecutorId>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <releaseProfiles>release</releaseProfiles>
+                    <tagNameFormat>bbkz-${project.version}</tagNameFormat>-->
+                </configuration>
             </plugin>
         </plugins>
     </build>

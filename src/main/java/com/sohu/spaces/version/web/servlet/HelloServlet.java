@@ -1,7 +1,5 @@
 package com.sohu.spaces.version.web.servlet;
 
-import com.sun.xml.internal.ws.resources.HttpserverMessages;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
