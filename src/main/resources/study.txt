@@ -1,0 +1,17 @@
+Maven的版本管理：
+1.在开发过程中软件版本发生变化，对项目版本演变过程的管理。任何一个项目都应该有一个长期、合理的版本演变过程。
+2.版本管理通过maven-release-plugin插件实现。
+    功能：1.自动版本发布   2.自动创建分支
+    <!-- 配置scm信息 -->
+    <scm>
+        <connection></connection>
+        <developerConnection></developerConnection>
+        <url></url>
+    </scm>
+    <!-- 配置release插件 -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.1</verion>
+
+    </plugin>
