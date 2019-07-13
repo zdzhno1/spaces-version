@@ -4,7 +4,7 @@
 
     <groupId>com.sohu.spaces</groupId>
     <artifactId>spaces-version</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
