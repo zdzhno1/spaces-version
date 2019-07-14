@@ -25,6 +25,32 @@
         <tag>zdzh-1.0-SNAPSHOT</tag>
     </scm>
 
+    <repositories>
+        <repository>
+            <id>upload-public</id>
+            <name>Upload Public</name>
+            <url>http://localhost:8081/nexus/content/repositories/upload-public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </releases>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <distributionManagement>
+        <repository>
+            <id>upload-releases</id>
+            <url>http://localhost:8081/nexus/content/repositories/upload-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>upload-snapshots</id>
+            <url>http://localhost:8081/nexus/content/repositories/upload-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
         <dependency>
