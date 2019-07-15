@@ -259,6 +259,25 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <!--配置系统属性：设置换行符LF-->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>1.0.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>set-system-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <properties>
+                                        <line.separator  xml:space="preserve">&#10;</line.separator>
+                                    </properties>
+                                </configuration>
+
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
 
 
