@@ -164,8 +164,8 @@
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
                     <releaseProfiles>release</releaseProfiles>
-                    <preparationGoals>clean install</preparationGoals>
-
+                    <pushChanges>false</pushChanges>
+                    <localCheckout>true</localCheckout>
                     <!--<autoVersionSubmodules>true</autoVersionSubmodules>
                     <mavenExecutorId>forked-path</mavenExecutorId>
                     <useReleaseProfile>false</useReleaseProfile>
