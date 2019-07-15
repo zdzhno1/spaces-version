@@ -271,8 +271,7 @@
                                 </goals>
                                 <configuration>
                                     <properties>
-                                        <line.separator xml:space="preserve">
-</line.separator>
+                                        <line.separator xml:space="preserve">&#10;</line.separator>
                                     </properties>
                                 </configuration>
 
