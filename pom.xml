@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sohu.spaces</groupId>
@@ -186,11 +187,45 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>optional/**</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources/optional/${includeResourcesDirectory}</directory>
+            </resource>
+        </resources>
     </build>
     <profiles>
+        <!-- 命令行指定项目运行环境：-Pdev -->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <includeResourcesDirectory>dev</includeResourcesDirectory>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <includeResourcesDirectory>test</includeResourcesDirectory>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <includeResourcesDirectory>prod</includeResourcesDirectory>
+            </properties>
+        </profile>
+
         <profile>
             <id>release</id>
-            <properties />
             <build>
                 <plugins>
                     <!--配置生成源码包-->
