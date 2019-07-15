@@ -259,8 +259,8 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!--配置系统属性：设置换行符LF-->
-                    <plugin>
+                    <!--配置系统属性：设置换行符LF 无效。。。-->
+                    <!--<plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>properties-maven-plugin</artifactId>
                         <version>1.0.0</version>
@@ -278,7 +278,7 @@
 
                             </execution>
                         </executions>
-                    </plugin>
+                    </plugin>-->
                 </plugins>
 
 
