@@ -134,19 +134,6 @@
                 </configuration>
             </plugin>
 
-            <!--配置生成test代码包-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>test-jar</id>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <!--配置生成code coverage报告-->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -234,6 +221,20 @@
                                 <id>attach-javadoc</id>
                                 <goals>
                                     <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!--配置生成test代码包-->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-jar-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>test-jar</id>
+                                <goals>
+                                    <goal>test-jar</goal>
                                 </goals>
                             </execution>
                         </executions>
