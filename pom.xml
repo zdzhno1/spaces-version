@@ -4,7 +4,7 @@
 
     <groupId>com.sohu.spaces</groupId>
     <artifactId>spaces-version</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.3</version>
     <packaging>war</packaging>
 
     <properties>
@@ -21,7 +21,7 @@
         <connection>scm:git:git@github.com:zdzhno1/spaces-version.git</connection>
         <developerConnection>scm:git:git@github.com:zdzhno1/spaces-version.git</developerConnection>
         <url>https://github.com/zdzhno1/spaces-version</url>
-        <tag>zdzh-1.0-SNAPSHOT</tag>
+        <tag>zhzh-1.3</tag>
     </scm>
 
     <repositories>
