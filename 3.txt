@@ -9,4 +9,7 @@ git学习
 	git commit -m
 	git diff 查看已暂存和未暂存的修改
 
-
+git status -s 时
+	已暂存 绿色 A M
+	未暂存 红色 ?? M
+git diff
