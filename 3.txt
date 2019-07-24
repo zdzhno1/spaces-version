@@ -1,0 +1,12 @@
+git学习
+1.git安装和配置
+	1）安装git依赖的包yum -y install (curl-devel、expat-devel、openssl、zlib-devel、asciidoc、xmlto、)
+	2）安装git make configure;./configure --prefix ;make all doc;make install install-doc install-html
+	3）git config --global user.name user.email core.editor
+2.git常用命令
+	git init git clone
+	git add
+	git commit -m
+	git diff 查看已暂存和未暂存的修改
+
+
