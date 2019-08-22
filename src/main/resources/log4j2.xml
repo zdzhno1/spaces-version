@@ -15,26 +15,26 @@
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}.%method:%line - %msg%n"/>
         </Console>
         <!--每天一个日志文件，文件大小>20MB时，产生新文件-1.log，每天的日志单独放一个文件夹并压缩-->
-        <RollingFile name="stdoutRollingFile" fileName="logs/stdout.log" filePattern="logs/$${date:yyyy-MM}/stdout-%d{MM-dd-yyyy}-%i.log.gz">
+        <RollingFile name="stdoutRollingFile" fileName="logs/stdout.log" filePattern="logs/stdout-%d{yyyy-MM-dd}-%i.log.gz">
             <!--过滤Logger传过来的日志，优先级为info-->
             <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}.%method:%line - %msg%n"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="20 MB" />
+                <SizeBasedTriggeringPolicy size="200 MB" />
                 <TimeBasedTriggeringPolicy />
             </Policies>
-            <!--每天可以生成20个文件，超出部分替换最后一个文件，同时其余文件名依次减一，删除第一个文件-->
-            <DefaultRolloverStrategy max="20"/>
+            <!--每天可以生成30个文件，超出部分替换最后一个文件，同时其余文件名依次减一，删除第一个文件-->
+            <DefaultRolloverStrategy max="30"/>
         </RollingFile>
-        <RollingFile name="stderrRollingFile" fileName="logs/stderr.log" filePattern="logs/$${date:yyyy-MM}/stderr-%d{MM-dd-yyyy}-%i.log.gz">
+        <RollingFile name="stderrRollingFile" fileName="logs/stderr.log" filePattern="logs/stderr-%d{yyyy-MM-dd}-%i.log.gz">
             <!--过滤Logger传过来的日志，优先级为error-->
             <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}.%method:%line - %msg%n"/>
             <Policies>
-                <SizeBasedTriggeringPolicy size="20 MB" />
+                <SizeBasedTriggeringPolicy size="200 MB" />
                 <TimeBasedTriggeringPolicy />
             </Policies>
-            <DefaultRolloverStrategy max="20"/>
+            <DefaultRolloverStrategy max="30"/>
         </RollingFile>
     </Appenders>
     <Loggers>
