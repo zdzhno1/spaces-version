@@ -10,7 +10,7 @@ public class CommonUtils {
      * @param streams
      * @throws IOException
      */
-    private void close(Closeable... streams) throws IOException {
+    public static void close(Closeable... streams) throws IOException {
         IOException ex = null;
         for (Closeable c : streams) {
             if (c != null) {
