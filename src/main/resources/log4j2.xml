@@ -64,9 +64,9 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level="all">
-            <AppenderRef ref="stdoutRollingFile"/>
-            <AppenderRef ref="stderrRollingFile"/>
+        <Root level="INFO">
+            <!--<AppenderRef ref="stdoutRollingFile"/>
+            <AppenderRef ref="stderrRollingFile"/>-->
             <AppenderRef ref="console"/>
         </Root>
         <!--过滤spring、mybatis无用的debug日志-->

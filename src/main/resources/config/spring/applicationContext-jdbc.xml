@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置加载外部属性文件-->
+    <context:property-placeholder location="classpath:db.properties" />
+
+    <!--数据库连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <!--独立式整合-->
+        <!--<property name="configLocation" value="classpath:config/hibernate/hibernate.cfg.xml"/>-->
+        <!--引入式整合-->
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <!--<property name="packagesToScan" value="com.sohu.spaces.version.ssh.beans"/>-->
+        <!--
+            1.mappingLocations  指定映射文件 可以使用*
+            2.mappingResources  指定配置文件 不可以使用*
+            3.mappingDirectoryLocations 指定目录
+
+        -->
+        <property name="mappingDirectoryLocations" >
+            <array>
+                <value>classpath:com/sohu/spaces/version/ssh/beans</value>
+            </array>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--连接数据库的基本信息-->
+        <property name="username">root</property>
+        <property name="password">root</property>
+        <property name="url">jdbc:mysql://localhost:3306/db?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC</property>
+        <property name="driverClassName">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--hibenate基本信息-->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.provider_class">com.alibaba.druid.support.hibernate.DruidConnectionProvider</property>
+        <!--<property name="hibernate.current_session_context_class">thread</property>-->
+
+        <!--指定映射配置文件-->
+        <mapping resource="com/sohu/spaces/version/ssh/beans/Account.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
